@@ -120,7 +120,7 @@ const DetailCarScreen = (props) => {
                     data={cars}
                     contentContainerStyle={{paddingHorizontal: 14,}}
                     renderItem={({ item }) => 
-                        <ItemSimilarCar style={{marginRight: 24, marginTop: 12, marginBottom: 24}} car={item}/>
+                        <ItemSimilarCar style={{marginRight: 16, marginTop: 12, marginBottom: 24}} car={item}/>
                     }
                 />
             </ScrollView>

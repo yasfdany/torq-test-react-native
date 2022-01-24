@@ -27,7 +27,7 @@ const ItemSimilarCar = (props) => {
                 {
                     width: 180,
                     backgroundColor: 'white', 
-                    elevation: 12, 
+                    elevation: 8, 
                     borderRadius: 24,
                     padding: 18,
                 }
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     carImage: {
         marginTop: 12,
         width: '100%',
-        height: 120,
+        height: 80,
         resizeMode: 'contain',
         paddingHorizontal: 14,
     },

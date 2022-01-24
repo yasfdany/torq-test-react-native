@@ -99,15 +99,27 @@ const HomeScreen = () => {
             </View>
             {
                 loading ? <View style={[GS.flex, GS.row, GS.mainCenter]}><ProgressBar color={Colors.primary}/></View> :
-                <View style={[GS.flex, GS.column]}>
-                    <FlatList
-                        style={{flex: 1}}
-                        data={cars}
-                        contentContainerStyle={{paddingBottom: 24,}}
-                        renderItem={({ item }) => 
-                            <ItemCar style={{marginHorizontal: 24, marginTop: 24}} car={item}/>
-                        }
-                    />
+                cars.length > 0 ?
+                    <View style={[GS.flex, GS.column]}>
+                        <FlatList
+                            style={{flex: 1}}
+                            data={cars}
+                            contentContainerStyle={{paddingBottom: 24,}}
+                            renderItem={({ item }) => 
+                                <ItemCar style={{marginHorizontal: 24, marginTop: 24}} car={item}/>
+                            }
+                        />
+                    </View>
+                : 
+                <View style={[GS.column,GS.flex, GS.mainCenter, GS.crossCenter]}>
+                    <Image 
+                        style={{
+                            width: "45%",
+                            height: "45%",
+                        }}
+                        source={ require("../../../../assets/images/empty_state.png") }/>
+                    <Text style={GS.black18}>Data not found</Text>
+                    <Text style={[GS.black14, {color: "gray"}]}>Try to using another keyword</Text>
                 </View>
             }
         </SafeAreaView>
