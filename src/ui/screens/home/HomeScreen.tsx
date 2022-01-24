@@ -13,6 +13,7 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { useDispatch, useSelector } from "react-redux"
 import {ProgressBar} from '@react-native-community/progress-bar-android';
+import LinearGradient from 'react-native-linear-gradient';
 
 import GS from '../../../constants/globalStyles'
 import Colors from '../../../constants/colors'
@@ -47,15 +48,16 @@ const HomeScreen = () => {
              <StatusBar
                 backgroundColor={Colors.primary}
                 barStyle={'light-content'} />
-            <View style={[
-                GS.column,
-                {
-                    padding: 24,
-                    backgroundColor: Colors.primary,
-                    borderBottomLeftRadius: 32,
-                    borderBottomRightRadius: 32,
-                }
-            ]}>
+            <View 
+                style={[
+                    GS.column,
+                    {
+                        padding: 24,
+                        backgroundColor: Colors.primary,
+                        borderBottomLeftRadius: 28,
+                        borderBottomRightRadius: 28,
+                    }]
+                }>
                 <View style={[GS.row, GS.spaceBetween, GS.crossCenter, {backgroundColor: 'transparent'}]}>
                     <Icon name={"menu"} color={'white'} size={24}/>
                     <Image style={{width: 34, height: 34, borderRadius: 12}} source={{uri: 'https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?size=626&ext=jpg'}}/>
@@ -65,7 +67,7 @@ const HomeScreen = () => {
                     marginTop: 12,
                     paddingHorizontal: 8,
                     borderRadius: 14,
-                    backgroundColor: '#fbfbfb',
+                    backgroundColor: 'rgba(0,0,0,.2)',
                 }]}>
                     <Icon 
                         name={"search"} 
@@ -73,20 +75,21 @@ const HomeScreen = () => {
                         size={20}
                         style={{
                             padding: 6,
-                            backgroundColor: Colors.primary,
                             borderRadius: 10,
                         }}/>
                     <TextInput 
                         value={text}
                         onChangeText={setText}
                         placeholder="Search here..."
-                        style={[{flex: 1, marginLeft: 6},GS.black14]}/>
+                        placeholderTextColor={"rgba(255,255,255,0.4)"}
+                        style={[{flex: 1, marginLeft: 6},GS.white14]}/>
                     {text.length > 0 ? 
                         <TouchableOpacity onPress={() => {
                             setText("")
                         }}>
                             <Icon
                                 name={"close"}
+                                color={"white"}
                                 size={20}
                                 style={{marginRight: 6}}
                             />
@@ -100,6 +103,7 @@ const HomeScreen = () => {
                     <FlatList
                         style={{flex: 1}}
                         data={cars}
+                        contentContainerStyle={{paddingBottom: 24,}}
                         renderItem={({ item }) => 
                             <ItemCar style={{marginHorizontal: 24, marginTop: 24}} car={item}/>
                         }

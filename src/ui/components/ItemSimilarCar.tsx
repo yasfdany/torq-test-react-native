@@ -13,20 +13,21 @@ import { useNavigation } from '@react-navigation/native'
 import GS from '../../constants/globalStyles'
 import Colors from '../../constants/colors'
 
-const ItemCar = (props) => {
+const ItemSimilarCar = (props) => {
     const navigation = useNavigation()
 
     return (
         <TouchableWithoutFeedback onPress={() => {
-            navigation.navigate("DetailCarScreen",{car: props.car})
+            navigation.push("DetailCarScreen",{car: props.car})
         }}>
             <View style={[
                 GS.column, 
                 GS.crossCenter,
                 props.style,
                 {
+                    width: 180,
                     backgroundColor: 'white', 
-                    elevation: 1, 
+                    elevation: 12, 
                     borderRadius: 24,
                     padding: 18,
                 }
@@ -62,4 +63,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default ItemCar
+export default ItemSimilarCar
