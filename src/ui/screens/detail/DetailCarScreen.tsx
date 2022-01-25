@@ -90,7 +90,7 @@ const DetailCarScreen = (props) => {
                 ]}>Car Specification</Text>
                 <View style={[GS.column, {marginLeft: 14, marginTop: 14}]}>
                     <TitleSection title={"Retail Price"} value={"¥"+car.msrp}/>
-                    <TitleSection style={{marginTop: 8}} title={"Launch Date"} value={"¥"+car.date_of_launch}/>
+                    <TitleSection style={{marginTop: 8}} title={"Launch Date"} value={car.date_of_launch}/>
                     <TitleSection 
                         style={{marginTop: 8}} 
                         title={"Dimension (M)"} 
